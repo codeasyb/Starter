@@ -119,7 +119,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+MEDIA_STATIC = os.path.join(BASE_DIR, 'staticfiles') 
 STATIC_URL = '/static/'
 
  # media root is going to be the root where the uploaded directory where the files are going to be saved 
@@ -140,6 +140,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER =  os.environ.get('USER_EMAIL')
 EMAIL_HOST_PASSWORD = os.environ.get('USER_PASS')
-# ewjtpqvsxghdhwas
+
+
 
 
