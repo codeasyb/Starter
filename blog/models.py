@@ -9,6 +9,11 @@ class Post(models.Model):
 	content = models.TextField()
 	date_posted = models.DateTimeField(default=timezone.now) # we do not want to exectue the now by [ now() ]
 	author = models.ForeignKey (User, on_delete=models.CASCADE) # if the user is deleted then the post will be deleted
+	created_on = models.DateTimeField(auto_now=True)
+	status = models.IntegerField(choices = STATUS, default=0)
+
+	class Meta:
+		ordering = ['-created_on']
 
 	def __str__(self):
 		return self.title
