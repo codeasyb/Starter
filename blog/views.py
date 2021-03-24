@@ -4,22 +4,6 @@ from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 
-# one way to make dummy data for posts
-# posts = [
-# 	{
-# 		'author': 'CoreyMS', 
-# 		'title': 'Blog Post 1',
-# 		'content': 'First post content',
-# 		'date_posted': 'August 27, 2020'
-# 	},
-# 	{
-# 		'author': 'jane Doe', 
-# 		'title': 'Blog Post 2',
-# 		'content': 'Secind post content',
-# 		'date_posted': 'August 27, 2020'
-# 	},
-# ]
-
 # Create your views here.
 def home(request):
 	context = {
@@ -99,8 +83,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 		if self.request.user == post.author:
 			return True
 		return False
-
-
 
 def about(request):
 	return render(request, 'blog/about.html', {'title': 'About'}) # rendering the about page using the template

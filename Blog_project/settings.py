@@ -140,7 +140,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER =  os.environ.get('USER_EMAIL')
 EMAIL_HOST_PASSWORD = os.environ.get('USER_PASS')
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
 
 # set alot of the configurations for us 
 django_heroku.settings(locals())
