@@ -3,7 +3,7 @@ from django.contrib.auth.models import User  # sending the signal to the user
 from django.dispatch import receiver # for receiving the signal
 from .models import Profile
 
-# we want a user profiel to be created for every user
+# we want a user profile to be created for every user
 # when the user is created, send this signal. And signal will be saved by {post_save}
 @receiver(post_save, sender=User) # when the user is saved send a signal 
 def create_profile(sender, instance, created, **kwargs):
